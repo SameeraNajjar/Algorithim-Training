@@ -1,0 +1,52 @@
+## Minimum Spanning Tree (MST) Algorithm
+
+### Overview
+This C++ program implements Kruskal's algorithm to find the Minimum Spanning Tree (MST) of a given undirected graph. The MST is a subset of the edges of the graph that connects all the vertices together with the minimum possible total edge weight.
+
+### Implementation
+The program consists of the following components:
+
+1. **Edge Struct**: Defines the structure of an edge, containing source, destination, and weight.
+2. **MinimumSpanningTree Class**: Handles the operations related to finding the MST.
+   - **addEdge**: Adds an edge to the graph.
+   - **find**: Finds the parent of a vertex using the union-find algorithm.
+   - **unionSets**: Unions two sets by rank to efficiently merge disjoint sets.
+   - **findMinimumSpanningTree**: Finds the MST using Kruskal's algorithm.
+3. **Main Function**: Reads input for the number of vertices and edges, adds edges to the graph, and finds the MST.
+
+### Usage
+1. **Compile**: Compile the program using a C++ compiler.
+   ```bash
+   g++ -o mst_algorithm mst_algorithm.cpp
+   ```
+2. **Run**: Execute the compiled binary.
+   ```bash
+   ./mst_algorithm
+   ```
+3. **Input**: Enter the number of vertices and edges when prompted. Then input the source, destination, and weight of each edge.
+4. **Output**: The program will display the edges in the MST along with their weights and the total weight of the MST.
+
+### Example
+Suppose we have the following input:
+```
+# of vertices: 4
+# of edges: 5
+Insert the source, destination, and weight of each edge:
+1 2 10
+1 3 6
+1 4 5
+2 3 15
+3 4 4
+```
+The program will output:
+```
+Edges in MST:
+1 - 4, Weight-> 5
+3 - 4, Weight-> 4
+1 - 2, Weight-> 10
+Total Weight of MST: 19
+```
+
+### Notes
+- Ensure the input follows the specified format: source, destination, and weight of each edge.
+- This implementation assumes undirected edges and uses Kruskal's algorithm to find the MST.

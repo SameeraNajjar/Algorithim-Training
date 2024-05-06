@@ -1,0 +1,50 @@
+## Huffman Coding Algorithm
+
+### Overview
+This Python script implements the Huffman coding algorithm, a widely used method for lossless data compression. Huffman coding assigns variable-length codes to input characters, with shorter codes assigned to more frequent characters, resulting in efficient compression.
+
+### Implementation
+The script consists of the following key components:
+
+1. **Node Class**: Represents a node in the Huffman tree, containing character, frequency, and left/right child pointers.
+2. **build_huffman_tree**: Constructs the Huffman tree from the input text based on character frequencies.
+3. **calculate_frequencies**: Calculates the frequency of each character in the input text.
+4. **build_huffman_codes**: Recursively generates Huffman codes for each character in the tree.
+5. **encode_text**: Encodes the input text using the generated Huffman codes.
+6. **decode_text**: Decodes the encoded text using the Huffman tree.
+7. **build_huffman_codes_and_table**: Convenience function to build Huffman codes and return them as a dictionary.
+8. **main Function**: Reads input paragraph, generates Huffman codes, encodes and decodes text, and calculates compression ratio.
+
+### Usage
+1. **Run the Script**: Execute the script using Python.
+   ```bash
+   python huffman_coding.py
+   ```
+2. **Input Paragraph**: Enter the paragraph you want to encode when prompted.
+3. **Encoded Output**: The script will display the Huffman codes and the encoded paragraph.
+4. **Decoding**: Enter the encoded string to decode, and the script will output the decoded text.
+5. **Compression Ratio**: The script calculates and displays the number of total bits needed to encode the paragraph.
+
+### Example
+Suppose we have the following input paragraph:
+```
+Enter the paragraph to encode:
+hello world
+```
+The script will output:
+```
+Huffman codes:
+{'h': '00', 'e': '01', ' ': '10', 'o': '110', 'l': '1110', 'w': '11110', 'r': '11111', 'd': '111111'}
+Encoded paragraph: 00011101111110111111111011111110
+Enter the string to decode:
+00011101111110111111111011111110
+Decoded: hello world
+Enter the encoded string to decode:
+00011101111110111111111011111110
+Decoded: hello world
+The number of total bits needed to encode the paragraph is: 32
+```
+
+### Notes
+- Ensure the Python script and input file are in the same directory.
+- This implementation assumes ASCII characters for simplicity.
